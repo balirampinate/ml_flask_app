@@ -31,10 +31,9 @@ def predict():
     
     init_features = [float(x) for x in request.form.values()]
     new_record =  [np.array(init_features)]
-    print(new_record)
     model= load('lr_model.pkl')
     predict_result = model.predict(new_record)
-    print(predict_result)
+    
     # return the result back
 
     return "<h3> The Housing Price is:- <h3>" +  str(predict_result)
